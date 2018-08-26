@@ -1,0 +1,597 @@
+<html><head><title>WRITING</title><style type="text/css">/* Stylesheet for Language and Learning Services layout */
+/* This stylesheet is loaded after the default Monash CSS and modifies/adds various styles */
+/* Included below are some hacks for Mac IE which utilitise the html>body hack */
+
+/* Hide stuff for print stylesheet */
+#accessibility { display:none; }
+#global-header { display:none; }
+#search { display:none; }
+div.header { display:none; }
+td.side-nav, img.index-image { display:none; }
+#bodytable { border:none; }
+#bodytable td,tr { border:none; }
+#index-image {display:none; }
+
+/*
+@page {
+  @top-left {
+    content: "Language and Learning Online";
+	padding-bottom:6px;
+  }
+  @bottom-right {
+    content: "Page " counter(pages);
+  }
+
+*/
+
+ /* Page Definitions 
+ @page {
+	mso-footnote-separator:url("../footer.php") fs;
+	mso-footnote-continuation-separator:url("../footer.php") fcs;
+	mso-endnote-separator:url("../footer.php") es;
+	mso-endnote-continuation-separator:url("../footer.php") ecs;
+}
+@page Section1 {
+	size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-footer:url("../footer.php") f1;
+	mso-paper-source:0;
+}
+
+div.Section1
+	{page:Section1;}
+	
+/* end page definitions */
+
+
+a:link, a:visited {
+	color:#000099;
+}
+
+body {
+	background:#fff;
+	margin:0px;
+	padding:5px;
+	color:#000;
+	font-family: Arial, Helvetica, sans-serif; 
+	line-height:16px;
+	font-size:10pt;
+}
+
+hr {
+	height:1px;
+	border:none;
+	background-color:#E5E5E5;
+	clear:both;
+}
+
+p, li, label, td, blockquote, q, th, ol, ul {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size:10pt;
+	page-break-inside:avoid;
+}
+
+blockquote, q {
+	font-style: italic;
+}
+
+h1, h2, h3, h4 {
+	color: #000099;
+	background:transparent;
+	font-family: Arial, Helvetica, sans-serif;
+	page-break-after:avoid;
+}
+
+h1 {
+	font-size:1.4em;	
+	text-transform:capitalize;
+}
+
+h2 {
+	display:block;
+	border-bottom:1px solid #000099;
+	padding:0;
+	margin:5px 0px;
+	font-size:1.2em;
+}
+
+h3 {
+	font-size:1.1em;	
+}
+
+.makecap {
+	text-transform:uppercase;
+}
+
+#footer {
+	font-size: 8pt;
+	border: none;
+	padding:0px;
+	margin:10px 0px 0px;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+#footer-vista {
+	display:block;
+	border-top:1px solid #E5E5E5;
+	font-size: 8pt;
+	font-family: Arial, Helvetica, sans-serif; 
+	padding: 12px;
+	margin:6px;
+	background:#fff;
+	color:#999;
+}
+
+#content-window {
+	padding:20px;
+	margin:10px;
+	background: #fff;
+}
+
+#content-window:after { /* following style fixes the 'image floating outside the content-window div' bug */
+    content: "."; 
+    display: block; 
+    height: 0px; 
+    clear: both; 
+    visibility: hidden;
+}
+
+/* Hides from IE-mac \*/
+* html #content-window {height: 1%;}
+/* End hide from IE-mac */
+
+#content-window-vista {
+	padding: 15px;
+	margin:8px;
+	background:#fff;
+}
+
+#bodytable {
+	background:#ffffff;
+	clear:both;
+}
+
+/* ****** BEGIN CONTENT STYLES ****** */
+.task { /* Used for all instruction blocks of text */
+	color:#5D5D5E;
+	font-weight:bold;
+	font-size:1.0em;
+	padding:12px 0px 12px 50px;
+	background-image: url(../images/task.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	page-break-inside:avoid;
+	margin:0px;
+}
+
+.taskfeedback { /* Used for all instruction blocks of text */
+	color:#5D5D5E;
+	font-weight:bold;
+	font-size:1.0em;
+	padding:12px 0px 12px 50px;
+	/** background-image: url(../images/taskfeedback.gif);
+	background-repeat: no-repeat;
+	background-position: center left; **/
+	margin:0px;
+	page-break-inside:avoid;
+}
+
+.studytip { /* Used for all instruction blocks of text */
+	color:#5D5D5E;
+	font-weight:bold;
+	font-size:1.0em;
+	padding:12px 0px 12px 50px;
+	background-image: url(../images/bulb.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	margin:0px;
+	page-break-inside:avoid;
+}
+.comment-studytip { /* Used for all instruction blocks of text within a comment */
+	color:#1265D3;
+	font-weight:bold;
+	font-size:1.0em;
+	padding:12px 0px 12px 50px;
+	background-image: url(../images/bulb-blue.gif);
+	background-repeat: no-repeat;
+	background-position: center left;
+	margin:0px;
+	page-break-inside:avoid;
+}
+
+
+.instruction { /* these need to go once site is checked */
+	background-color:#fc3;
+}
+
+.question { /* these need to go once site is checked */
+	background-color:#fc3;
+}
+
+.topic {
+	background-color:#fefeee;
+	color:#5D5D5E;
+	padding: 10px 20px;
+	margin:10px 20px 20px 20px;
+	border: dotted 1px #5D5D5E;
+	font-weight:normal;
+	line-height:16px;
+	font-style:italic;
+	/* causes border to be clear of floated image in Gecko */
+	display:table;
+	page-break-inside:avoid;
+}
+
+.resource {
+	background-color:#FFFFDC;
+	padding: 10px;
+	margin:10px 10px 20px 10px;
+	border: solid 1px #EEEFA5;
+	width:90%;
+	font-style:normal;
+	text-align:left;
+	page-break-inside:avoid;
+}
+
+.resourcetable {
+	background-color:#FFFFDC;
+	padding: 10px;
+	margin:10px 10px 20px 10px;
+	border: solid 1px #EEEFA5;
+	font-style:normal;
+	page-break-inside:avoid;
+}
+
+.notepaper { 
+	border-right: solid 1px #F3F3D6;
+	margin:10px;
+	background-image: url(../images/notepaper.gif);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+
+.footnote {
+	font-size:.8em;
+}
+
+.highlightyellow {
+	background:#FCFF64;
+}
+.highlight {
+	background: #FCFF64;
+}
+.highlightactive {
+	background: #B1D9F4;
+}
+ol.olfeedback p {
+	margin:0px;
+}
+ol.olfeedback li {
+	padding:0px 0px 20px 0px;
+}
+
+/* coloured text */
+.redtext {color: #f00;}
+.greentext {color:#3c0;}
+.orangetext {color:#DD881B;}
+.bluetext {color:#002F94;}
+.greentext {color:#129C00;}
+
+
+
+.noteline1 { /* used for note taking pages */
+	border-left: 2px solid #333;
+	height:60px;
+}
+
+.noteline2 {
+	border-left: 2px solid #333;
+	height:50px;
+}
+
+.noteline3 {
+	border-left: 2px solid #333;
+	height:40px;
+}
+.notelinedouble {
+	border-left: 2px solid #333;
+	height:40px;
+	background:#999;
+}
+
+.notespace1 {
+	height:120px;
+}
+
+.notespace2 {
+	height:50px;
+}
+
+.notespace3 {
+	height:40px;
+}
+
+table.data { 
+	  border-collapse: collapse;
+      border: 1px solid #ddd;
+      margin-left:10px;
+	  page-break-inside:avoid;
+}
+  
+table.data td {
+	border: 1px solid #ddd;
+	padding: 5px;
+	background-color:#fff;
+}
+
+table.data th {
+	background-color:#eee;
+	border: 1px solid #ddd;
+	padding: 10px;
+	color: #333;
+	vertical-align:top;
+}
+table.data caption { 
+	  color:#555;
+	  font-weight: normal;
+	  font-size:0.9em;
+}
+
+.audioDiv {
+	float:right;
+	height:50px;
+	width:100px;
+	border: solid 1px #ddd;
+}
+
+#home-footer, #footer, #section-nav-footer {
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+.inputform {
+	margin-right:10px;
+}
+.whitetext {
+	color:#FFFFFF;
+	font-weight:bold;
+}
+.car { /* Used for all instruction blocks of text */
+	
+	padding:12px 0px 12px 50px;
+	background-image: url(../images/writing/engineering/car-illustration.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	margin:0px;
+	width: 450px;
+	height: 175px;
+}</style><style type="text/css">@page Section1 { mso-header-top-left { content: "Language and Learning Online"; padding-bottom:6px; }  @mso-header-bottom-right { content: "Page " counter(pages); }</style><script language='Javascript'>var isIE = navigator.userAgent.indexOf("MSIE")+1;		//account for M$ and Opera
+var isGecko = navigator.userAgent.indexOf("Gecko")+1;  //account for Mozilla/Netscape 6+/Safari/Konquerer
+
+/***************** Cross-browser event object ******************/
+function universalEvent() {
+	this.evtSrc = null;
+	this.evtSrcId = "";
+	this.evtType = null;
+	this.mouseX = null;
+	this.mouseY = null;
+	this.evtRef = null;
+	this.key = null;
+}
+
+universalEvent.prototype.refresh = function (evtObj) {
+	if (isIE) evtObj = event;
+	if (isIE) {
+		this.evtRef = evtObj;
+		this.evtSrc = evtObj.srcElement;
+		this.evtSrcId = evtObj.srcElement.id;
+		this.evtType = evtObj.type;
+		this.mouseX = evtObj.clientX + document.body.scrollLeft;
+		this.mouseY = evtObj.clientY + document.body.scrollTop;
+		this.key = evtObj.keyCode;
+	}
+	else if (isGecko) {
+		this.evtRef = evtObj;
+		this.evtSrc = evtObj.target;
+		// next line to account for Safari/Konqueror returning the Text node rather than the Element node as the event source.
+		while ( this.evtSrc.nodeType != 1 ) {
+		    this.evtSrc = this.evtSrc.parentNode;
+		}
+		this.evtSrcId = this.evtSrc.id;
+		this.evtType = evtObj.type;
+		this.mouseX = evtObj.pageX;
+		this.mouseY = evtObj.pageY;
+		this.key = evtObj.charCode;
+	}
+}
+
+universalEvent.prototype.cancel = function () {
+	if (isIE) this.evtRef.returnValue=false;
+	else if (isGecko) {
+		if (this.evtRef.cancelable) this.evtRef.preventDefault();
+	}
+}
+/**************************************************************/
+
+//tick and X for interactions
+var correct=new Image(25,25);
+correct.src="assets/images/correct.gif";
+var incorrect=new Image(25,25);
+incorrect.src="assets/images/incorrect.gif";
+
+String.prototype.trim = function()
+{
+    // Use a regular expression to replace leading and trailing 
+    // spaces with the empty string
+    return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+Array.prototype.contains = function(mixed) {
+	var i;
+	if (typeof(mixed) != "string" && typeof(mixed) != "number") return null;
+	for (i=0;i<this.length;i++) if (this[i] == mixed) return true;
+	return false;
+}
+
+//to handle multiple onload items, this function queues script and runs it when the event triggers.
+var onLoadScript="";
+function runOnLoad(script) {
+	if (typeof(script) == "object" || typeof(script) == "undefined") { 	//being called by event handler
+		if (onLoadScript != "") eval(onLoadScript);
+	}
+	else onLoadScript += script;
+}
+window.onload = runOnLoad;
+
+//dynamically add a stylesheet link to the doc.
+function insertStyleSheet(url) 
+{
+	var current_page	=	location.href;
+	//alert (current_page.indexOf("accessible=true"));
+	var accessible_version	=	current_page.indexOf("accessible=true");
+	if (accessible_version>0)
+	{
+		//alert ('in');
+		return true; //if accessible version-return without including the stylesheet
+	}
+	else
+	{
+	if (arguments.length < 1) return false;
+	var d,h;
+	d = document.createElement("link");
+	d.setAttribute("rel","stylesheet");
+	d.setAttribute("type","text/css");
+	d.setAttribute("href",url);
+	h = document.getElementsByTagName("head")[0];
+	h.appendChild(d);
+	return true;
+	}
+}
+
+//exactly as the function name suggests
+function removeChildElements(ele) {
+	var z;
+	while (ele.childNodes.length > 0) ele.removeChild(ele.firstChild);
+}
+
+//add link relative to base href to anchor links with out link specified.
+function fixAnchorLinks() {
+	var a,i,l;
+	l = getRelativeLink();
+	a=document.getElementsByTagName("a");
+	for (i=0;i<a.length;i++) {
+		if (a[i].className == "anchor") {
+			a[i].href = l + a[i].href.substr(a[i].href.indexOf("#"));
+		}
+	}
+}
+
+//Returns the link to the current page relative to the base href.
+function getRelativeLink() {
+	var a,l;
+	a=document.getElementsByTagName("base")[0].href.length;
+	if ((l=location.href.indexOf("#")) > -1) return location.href.substring(a,l);
+	else if ((l=location.href.indexOf("?")) > -1) return location.href.substring(a,l);
+	else return location.href.substr(a);
+}
+
+/*******************
+Vista template hack
+********************/
+function fixLinks() {
+	var a,i,l;
+	a=document.getElementsByTagName("a");
+	for (i=0;i<a.length;i++) {
+		if (l=a[i].getAttribute("href")) {
+			if (!(l.indexOf("http://")+1) && !(l.indexOf("mailto:")+1) && !(l.indexOf("ftp://")+1) && !(l.indexOf("javascript:")+1) && a[i].getAttribute("target") != "_blank") a[i].setAttribute("href",l + "?pagetype=vista");
+		}
+	}
+}
+
+if (typeof(isVista) != "undefined") {
+	if (isVista) runOnLoad("fixLinks();");
+}
+/*******************/
+
+
+//copy child element from one node to another
+function copyChildNodes(ele1,ele2) {
+	if (!ele1.childNodes) return false;
+	while (ele1.childNodes.length > 0) {
+		ele2.appendChild(ele1.childNodes[0]);
+	}
+	return true;
+}
+
+// exactly the same functionality as DOMElement.insertBefore. Would have used prototyping if it wasn't for IE  >:-|
+function insertAfter(newEle,refEle) {
+	if (refEle.nextSibling == null) return refEle.parentNode.appendChild(newEle);
+	else return refEle.parentNode.insertBefore(newEle,refEle.nextSibling);
+}
+
+// Used for finding the next suitable container element to insert comment div's into.
+function findTopInlineNode (ele) {
+	var foundOne=false,i,last,eles,j=0;
+	if (arguments.length == 1) eles=["div","td","body"];
+	else {
+		eles = new Array();
+		while (++j<arguments.length) eles.push(arguments[j]);
+	}	
+	do {
+		for(i=0;i<eles.length;i++) {
+			
+			if (ele.nodeName.toLowerCase().indexOf(eles[i]) > -1) foundOne = true;
+		}
+		if (!foundOne) {
+			last = ele;
+			ele = ele.parentNode;
+		}		
+	} while (!foundOne);
+	return last;
+}
+// the following function is used for Accessible Version link on header.php
+function accessQueryString()
+{
+	var current_page		=	location.href;
+	
+	if (!(current_page.indexOf(".xml")>0))
+	{
+		current_page		=	current_page+"index.xml";	
+	}
+	//alert (current_page.indexOf("accessible=true"));
+	var qStringExists		=	current_page.indexOf("?");
+	if (qStringExists>0)
+	{
+		var accessExists	=	current_page.indexOf("accessible=true");
+		if (accessExists<0)
+		{
+			var queryString	=	"&accessible=true";
+		}	
+	}
+	else
+	{
+		var queryString		=	"?accessible=true";
+	}
+	var accessUrl			=	current_page+queryString;
+	window.location.href	=	accessUrl;
+	//return accessUrl;
+}</script></head><body><h1><span class="makecap">General writing</span> (Language and Learning Online)</h1><style type="text/css"></style> <h2 >General writing</h2> <p > <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/home.jpg" alt='General writing' align='right' ></img>These general tutorials will help you improve your ability to write at university. Choose from tutorials on any of the following:</p> <ul class='listdot' > <li >writing  <strong > <a href='writing/general/essay/index.xml' >essays</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/essay/index.xml&gt;</em> </strong></li> <li >writing  <strong > <a href='writing/general/report/index.xml' >reports</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/report/index.xml&gt;</em> </strong></li> <li >writing postgraduate  <strong > <a href='writing/general/lit-reviews/index.xml' >literature reviews</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/lit-reviews/index.xml&gt;</em> </strong></li> <li > <strong > <a href='writing/general/thesis-edit/index.xml' >editing</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/thesis-edit/index.xml&gt;</em> </strong> your honours or postgraduate thesis</li> <li >What makes a  <strong > <a href='writing/general/essay/1.xml' >good essay</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/essay/1.xml&gt;</em> </strong></li> <li >What makes a  <strong > <a href='writing/general/lit-reviews/7.xml' >good review</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/lit-reviews/7.xml&gt;</em> </strong></li> <li >Why do we  <strong > <a href='writing/general/reference/index.xml' >reference?</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/reference/index.xml&gt;</em> </strong></li></ul> <br ></br> <br ></br><style type="text/css"></style> <h2 >Writing literature reviews</h2> <div style='float:left;font-size:0.8em;' id='printable-doc' ></div> <br ></br> <h3 >Why do you need to review the literature for your thesis or project?</h3> <p > <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/lit-reviews/home.jpg" alt='Writing literature reviews' align='right' ></img>A review of the literature has the following functions:
+		 <ul class='listspaced' > <li >to justify your choice of research question, theoretical or conceptual framework, and method;</li> <li >to establish the importance of the topic;</li> <li >to provide background information needed to understand the study;</li> <li >to show readers you are familiar with significant and/or up-to-date research relevant to the topic;</li> <li >to establish your study as one link in a chain of research that is developing knowledge in your field.</li></ul></p> <p >The review traditionally provides a historical overview of the theory and the research literature, with a special emphasis on the literature specific to the thesis topic. It serves as well to support the argument/proposition behind your thesis, using evidence drawn from authorities or experts in your research field.</p> <p > <strong >Your review of the literature may be</strong> <ol class='listspaced' > <li >stand-alone, or</li> <li >embedded in the discussion, or</li> <li >segmented into a series of chapters on several topics.</li></ol></p> <p >The review must be shaped by a focus on key areas of interest, including research which provides a background to the topic (depending on whether it is for an Honours thesis or for a PhD). It should also  <strong >be selective</strong>. A common mistake in writing the review is to comment on everything you have read regardless of its relevance. In your writing it is useful to  <strong >think of the review as a funnel</strong> - start wide with the overview and then quickly narrow into discussing the research that relates to your specific topic.</p> <p >Another way of looking at the process, particularly if you are examining several topics (or variables), is to think of yourself as a film director (Rudestam  and  Newton, 1992). You can think of providing your audience with:
+		 <ul class='listspaced' > <li > <strong >long shots</strong> to provide a solid sense of the background;</li> <li > <strong >middle distance shots</strong> where the key figures and elements to be examined are brought clearly into view;</li> <li > <strong >close-up shots</strong> where the precise focus of your work is pinpointed.</li></ul></p> <p >&#039;Literature&#039; can include a range of sources:
+		 <ul class='listspaced' > <li >journal articles</li> <li >monographs</li> <li >computerized databases</li> <li >conferences proceedings</li> <li >dissertations</li> <li >empirical studies</li> <li >government reports and reports from other bodies</li> <li >historical records</li> <li >statistical handbooks.</li></ul></p> <p >A number of these may be on the web. You should approach such material with the same critical eye as you approach printed material.</p> <h3 >What are the examiners looking for? </h3> <p >A review of the literature should:</p> <ul class='listspaced' > <li >set up a theoretical framework for your research;</li> <li >show your reader that you:
+			 <ul class='listspaced' > <li >have a clear understanding of the key concepts/ideas/studies/ models related to your topic;</li> <li >know about the history of your research area and any related controversies;</li> <li >can discuss these ideas in a context appropriate for your own investigation;</li> <li >can evaluate the work of others;</li></ul></li> <li >clarify important definitions/terminology;</li> <li >develop the research space you will also indicate in the  <strong >Introduction</strong> and  <strong >Abstract</strong>;</li> <li >narrow the problem, and make the study feasible.</li></ul> <p > <strong >Questions you need to ask yourself when you are planning and drafting your Literature Review</strong>:
+		 <ol class='listspaced' > <li >What has been done in your field of research? What principles of selection are you going to use?</li> <li >How are you going to order your discussion? Chronological, thematic, conceptual, methodological, or a combination? What section headings will you use?</li> <li >How do the various studies relate to each other? What precise contribution do they make to the field? What are their limitations?</li> <li >How does your own research fit into what has already been done?</li></ol></p> <p style='text-align:right' class='footnote' >Adapted from  <cite >Literature Review Guide</cite>, Gail Craswell, ANU.</p> <br ></br> <div style='float:left;font-size:0.8em;' id='printable-doc' ></div> <br ></br><style type="text/css"></style> <h2 >Matching introductions and conclusions</h2> <p >The main aim in structuring your review of the literature is to lead your reader to the point where he/she can see no other option than the need to conduct precisely the form of research you are proposing. The introduction and conclusion to your review of the literature, as well as indicating how your research is going to bring to a satisfactory resolution unresolved questions in others&#039; work, can also accomplish additional tasks. You can, for example, identify the key terms and concepts; you can outline the structure of the review itself - by preview in the introduction, or review in the conclusion - and you can then foreshadow the direction of the next section/chapter (see also Giving Reader Directions).</p> <p >Consider the key terms in the following introduction to the literature review in a Masters Project in Linguistics and see how the student returns to them in her conclusion.</p> <h3 >Example 1 topic: &quot;Using computer technology to focus on form in corrective feedback: A case study&quot;.</h3> <div class='resource' > <p > <strong >2. STIMULI FOR A FOCUS ON FORM</strong></p> <p > <strong >2.1 The value of corrective feedback</strong></p> <p style='text-align:center' >[Introduction]</p> <p >Linguists and educationalists have for many years had conflicting views about  <strong >the value of correcting linguistic errors</strong>[1] in the speech and writing of second language learners. With regard to the practice of correcting written errors, one extreme view is that corrections do not have a significant effect on student errors and teachers should, therefore, adopt less time-consuming efforts to direct students&#039; attention to surface error (Robb, Ross  and  Shortreed 1986:91). The more moderate view does not dismiss the value of correction as a useful teaching technique, but rather, it emphasises the importance of consistency and systematicity if the  <strong >positive effects of correction</strong>[2] are to be realised (Cohen and Robbins 1976:60; Rivers 1981:306; Lalande 1982:140).</p> <p >In second language teaching/learning, the purpose in providing feedback such as &#039;correction&#039;, i.e., &#039;corrective feedback&#039; (Schachter 1991:89), is to supply learners with  <strong >&#039;negative evidence&#039;</strong>[3] which attempts to draw their attention to the linguistic errors made (Ellis 1994:584), or to &quot;what is ungrammatical in their sentences&quot; (p. 434). According to Gass (1991:140), focusing attention on form through corrective feedback is similar to grammar instruction in the way that it alerts &quot;learners to the mismatch between their learner language form and the target language&quot;. Indeed, a number of studies investigating the effect of corrective feedback in speech (Tomasello and Herron, 1989:394; Lightbown and Spada 1990:443; Carroll and Swain, 1993:372), and in writing (Lalande 1982:145) support the view that  <strong >learners can improve their conscious knowledge of the target language</strong>[4] through  <strong >a focus on form in the corrective feedback</strong>[5].</p> <p style='text-align:center' >[Conclusion]</p> <p >The above discussion has highlighted the  <strong >benefits of using a concordancer as a research tool for investigating and focusing on regular patterns of language use</strong>. It reviews a range of previous applications that have used concordance data as stimuli for investigating students&#039; linguistic errors. The technique proposed in this study extends on these previous applications by providing students with  <strong >two types of stimulus for focusing on linguistic form</strong>: 1) the negative evidence of extensive corrective feedback, and 2) the  <strong >positive evidence</strong> of concordance data which the students generate independently from a corpus of their own reformulated texts. The next section elaborates further on the proposed technique and provides a detailed account of the method used to trial it.</p></div> <p class='task' >Note the key terms in the Paragraphs 2 and 3 of the following introduction to the literature review in a Chemical Engineering PhD. See how the student returns to them in his conclusion.</p> <h3 >Example 2 topic: &quot;Design of high-rate trickling filters&quot;</h3> <div class='resource' > <p > <strong >CHAPTER 2</strong></p> <p > <strong >LITERATURE SURVEY</strong></p> <p style='text-align:center' >[Introduction]</p> <p >The technical literature of trickling filters is very extensive. This is evidenced by the literature search and critical analysis published by Dow (1971), which cited over 5,600 references in the literature published up to 1968. An exhaustive review of the literature is thus beyond the scope of this work.</p> <p >The aim of this chapter is to provide, through selective reference to some of the literature,  <strong >a clearer understanding</strong> of the different microbiological, chemical and physical  <strong >processes
+				that occur within trickling filters</strong>. Experimental observations of various trickling filter phenomena
+				are reviewed, and there is discussion of the  <strong >sometimes conflicting conclusions about the mechanisms of trickling filtration that have been drawn from the empirical evidence.</strong></p> <p >The chapter is divided into two parts. The subject of the first is the  <strong >biological film which is the site of the biological oxidation of organic matter from the wastewater</strong>, and is thus the heart of the process of trickling filtration. The formation of the biofilm is outlined, and the different processes which occur within it are discussed. The remainder of the chapter is devoted to a consideration of the  <strong >operating variables which determine trickling filter performance</strong>.</p> <div id='itc-buts' > <span style='display:none' id='itc-ans' >1,9,10,14,15,20,21,22</span></div> <p style='text-align:center' >[Conclusion]</p> <p >Concluding Remarks</p> <p >The review of literature in this Chapter has concentrated largely on  <strong >empirical observations of trickling filters</strong>. At the micro level, the  <strong >effects of oxygen and substrate limitations on the reactions occurring within the biofilm have been assessed</strong>. At the macro level,  <strong >trickling filter performance has been considered in terms of state variables such as hydraulic rate and depth of packing</strong>. Certain important concepts, such as liquid residence time, have been introduced and used to explain, qualitatively, certain aspects of filter behaviour.</p> <p > <strong >To quantify filter behaviour, it is necessary to develop a theory for the process; the theory may be a complex mechanistic model, or a simple empirical correlation</strong>. All trickling filter theories are based to some extent on empirical observation, if only for certain basic assumptions. Thus this Chapter provides a basis for the next in which the development of trickling filter theories is outlined, and various design equations are critically analyzed.</p> <script type='text/javascript' src="http://www.monash.edu.au/lls/llonline/assets/javascript/int-txtClick2.js" ></script></div><style type="text/css"></style> <h2 >Giving reader directions</h2> <p >Reader directions are comments on the text in the text: they give signals to the reader about where the author is going, where he or she has got to, and what he or she has achieved so far. The author &quot;intrudes&quot; to direct the reader in some way.</p> <p > <strong >Starting with the top level this can apply to:</strong></p> <div > <ul class='listspaced' > <li >the whole thesis ( <em >the focus of this thesis is...</em>);</li> <br ></br> <li >another chapter ( <em >the physical properties are presented and analysed in Chapter 5</em>);</li> <br ></br> <li >the current chapter ( <em >the rest of this chapter will examine...</em>);</li> <br ></br> <li >another section ( <em >in the previous section, it was demonstrated...</em>);</li> <br ></br> <li >the current section ( <em >the following case study will illuminate...</em>);</li> <br ></br> <li >the passage immediately preceeding or following ( <em >the objectives are as follows:...</em>).</li></ul></div> <p > <strong >More specifically, these reader directions can function to:</strong></p> <ul class='listspaced' > <li > <strong >preview:</strong> <p > <strong >Example 1</strong>:  <em >These two techniques are discussed below.</em></p> <p > <strong >Example 2</strong>:  <em >In the first section of this chapter, the achievement in this area between 1996 and 1998 will be presented and discussed in detail.</em></p></li> <li > <strong >review:</strong> <p > <strong >Example 1</strong>:  <em >In the preceding section, the results of tests performed on interfaces comprising concrete and either Johnstone or Gambier Limestone were outlined.</em></p> <p > <strong >Example 2</strong>:  <em >The applications of educational technology elaborated on in the previous chapter has indicated an irreconcilable difference between...</em></p></li> <li > <strong >overview (provide purpose statements):</strong> <p > <strong >Example 1</strong>:  <em >It is now appropriate to consolidate these ideas and to examine POSTGRES in greater detail in relation to its support for rules and objects.</em></p> <p > <strong >Example 2</strong>:  <em >This discussion of constructivism has underlined the necessity to consider collaborative learning as a means of providing multiple perspectives. That approach will now be examined in relation to...</em></p></li></ul><style type="text/css"></style> <h2 >Citing previous research</h2> <p class='studytip' >Click on the  <span class='highlightactive' >highlighted</span> text to see the comments.</p> <p >When you cite the work of other authors, you may choose to focus either on the  <em >information</em> provided by that author, or on the  <em >author him- or herself</em>. The first focus is called  <strong >information prominent</strong> because the information is given primary importance:</p> <p > <strong >Example 1:</strong> <em >&quot;For viscoelastic fluids, the behaviour of the time-dependent stresses in the transient shear flows is also very important (Boger et al., 1974).</em>&quot;</p> <p >In the second type,  <strong >author-prominent</strong> citation, the author&#039;s name is given more emphasis. It serves as the subject of the sentence, followed by the date or citation number in parentheses, and then by the information. Such citations can be either  <strong >strong</strong> or  <strong >weak</strong>, depending on how much emphasis is placed on the identity of the author:</p> <p > <strong >Example 2:</strong> <em >&quot;Close (1983) developed a simplified theory using an analogy between heat and mass transfer and the equivalent heat transfer only case.</em>&quot; ( <strong >strong</strong>)</p> <p > <strong >Example 3:</strong> <em >&quot;Several authors have suggested that automated testing should be more readily accepted (Balcer, 1989; Stahl, 1989; Carver  and  Tai, 1991).</em>&quot; ( <strong >weak</strong>)</p> <h3 >Exercise 1</h3> <p class='task' >Try making Example 1 author-prominent, and Examples 2 and 3 information-prominent. How does the emphasis change in each one?</p> <label for='ta1' >Example 1:</label> <br ></br> <textarea id='ta1' rows='4' cols='50' >Enter here...</textarea> <p class='taskfeedback' > <span id='comment-ref-1'  style='background:#B1D9F4;' ><sup>[1]</sup>Show answers</span></p> <hr ></hr> <label for='ta2' >Example 2:</label> <br ></br> <textarea id='ta2' rows='4' cols='50' >Enter here...</textarea> <p class='taskfeedback' > <span id='comment-ref-2'  style='background:#B1D9F4;' ><sup>[2]</sup>Show answers</span></p> <hr ></hr> <label for='ta3' >Example 3:</label> <br ></br> <textarea id='ta3' rows='4' cols='50' >Enter here...</textarea> <p class='taskfeedback' > <span id='comment-ref-3'  style='background:#B1D9F4;' ><sup>[3]</sup>Show answers</span></p> <hr ></hr> <h3 >Exercise 2</h3> <p >In some disciplines, information-prominent citation is the norm. In the following drafts of an Engineering PhD student&#039;s paper (for a journal), the student is summarising a large amount of material. After discussion, he was able to reconceive the introductory paragraph as a number of topics (investigated by different authors) supporting a clear topic sentence. This enabled him more easily to identify for the reader how his own contribution was significant.</p> <p > <strong >Earlier draft</strong></p> <p class='resource' >Network planning problems are too complicated to be solved by a single technique. Therefore the tool which incorporates multi techniques is highly desirable. Many attempts have been made to realize a hybrid system. Stonebraker [2] described attempts to integrate knowledge base of rules with database of facts. Martini et al. [2] integrate rule-based expert system and operations research methods. Integration of rulebased features and object-oriented paradigm can be found in Bahr et al. [3]. Allemang [4] described combination of generic procedural form and case-based reasoning.</p> <p > <strong >Later draft</strong></p> <p class='resource' >Many attempts have been made to realise a hybrid system using multiple techniques. There have been attempts to explore an integration of rule systems into database systems, the use of mathematical models combined with rules and a combination of rules and an object-oriented modelling [3,4,5]. Another method that has also been combined into a hybrid system is case-based reasoning [6]. The integration of methods described in previous papers seems to offer only ad hoc solutions. None of them was based on a unified mechanism. In contrast, this paper describes a network planning tool that uses a fundamental mechanism within a constraint-based planning engine. This mechanism allows a tight integration of plannng rules, optimization algorithms, casebase and database modules into a planning system. Therefore, it ensures higher efficiency.</p> <p class='task' >What are the specific changes he makes?</p> <p class='taskfeedback' > <span id='comment-ref-4'  style='background:#B1D9F4;' ><sup>[4]</sup>Comments</span></p> <div id='comment-1' ><sup style=background:#B1D9F4;>[1]</sup> <h4 >An author-prominent example</h4> <p > <strong >Example 1 </strong>Boger et al (1974) claim that for viscoelastic fluids, the behaviour of the time-dependent stresses in the transient shear flows is also very important.</p></div> <div id='comment-2' ><sup style=background:#B1D9F4;>[2]</sup> <h4 >An information-prominent example</h4> <p > <strong >Example 2</strong> A simplified theory has been developed using an analogy between heat and mass transfer and the equivalent heat transfer only case (Close, 1983).</p></div> <div id='comment-3' ><sup style=background:#B1D9F4;>[3]</sup> <h4 >An information-prominent example</h4> <p > <strong >Example 3</strong> It has been suggested that automated testing should be more readily accepted (Balcer, 1989; Stahl, 1989; Carver  and  Tai, 1991).</p></div> <div id='comment-4' ><sup style=background:#B1D9F4;>[4]</sup> <h4 >Exercise 2</h4> <p > <strong >[a]</strong> <span class='highlightpink' >Many attempts have been made</span> to realise a hybrid system using multiple techniques. There have been attempts to explore an integration of rule systems into database systems, the use of mathematical models combined with rules and a combination of rules and an object-oriented modelling [3,4,5]. </p> <p >Another method that has also been combined into a hybrid system is case-based reasoning [6]. The integration of methods described in previous papers  <strong >[b]</strong> <span class='highlightpink' >seems to offer only ad hoc solutions</span>. None of them was based on a unified mechanism. In contrast, this paper describes a network planning tool that uses a fundamental mechanism within a constraint-based planning engine. This mechanism allows a tight integration of planning rules, optimization algorithms, casebase and database modules into a planning system. Therefore, it ensures higher efficiency.</p> <hr ></hr> <p > <strong >[a]</strong> Note the topic focus on the &quot;attempts&quot; - the research which has been done. <br ></br>
+				 <strong >[b]</strong> The disadvantage with previous research is identified. <br ></br>
+				 <strong >[c]</strong> The first paragraph is developed by listing the possible techniques. <br ></br>
+				 <strong >[d]</strong> The second paragraph identifies the contribution of the current paper.</p></div> <script type='text/javascript' src="http://www.monash.edu.au/lls/llonline/assets/javascript/showlinks.js" ></script><style type="text/css"></style> <h2 >Ordering citations</h2> <p >All approaches to ordering citations should move toward the specific focus of the author&#039;s own study:</p> <ul class='listspaced' > <li >distant to close</li> <li >chronological</li> <li >different categories of approach</li> <li >a combination of the above</li></ul> <h4 >Example 1</h4> <p class='resource' > <strong >The general text for the area of information retrieval is more than 10 years old</strong> (Salton and McGill, Introduction to Modern Information Retrieval, 1983). Yet, the methods of information retrieval mentioned are still relevant today. Van Rijsbergen (1979) describes probabilistic retrieval, which is the model that the Bayesian network implementation of information retrieval system is based on. Of the implementations of such systems, Turtle&#039;s (1990) implementation  <strong >appears to be the most well-known and demonstrates superior performance</strong> compared to Boolean and vector space methods. Ghazfan et al. (1994) have produced a  <strong >different implementation which has not been tested in an actual information retrieval system</strong>. It is the purpose of this investigation to obtain performance results in an actual information retrieval system.</p> <p >Note how this example moves from distant to close (in terms of relevance and applicability as well as chronologically). It moves from 1) the broader historical context to 2) the implementation which demonstrates superior performance, and then to 3) the implementation which provides the model to be tested for the study.</p> <h4 >Example 2</h4> <div class='resource' > <p >The situational approach was  <strong >very much a product of the 1960s,</strong> one of its pioneering achievements being Neile Osman&#039;s work with Australian immigrants (Osman, 1959). As a movement, however,  <strong >it did not really survive the attack made on it by Wilkins in the early 70&#039;s</strong> (e.g. Wilkins, 1973). Wilkins&#039; main objection therefore is that the situational approach is superficial. [...] Widdowson, for instance, observes that &#039;The danger of such analysis is that ...&#039; Recent work by Ventola (1983; 1984), Martin (1985), Coupland (1983) and others opts for [...]  <strong >Current trends are towards</strong> reconstructing accounts that include...</p> <p >Speech community has been an evolving concept [...] and the variety of [...] criteria has been discussed by Hudson (1980), Saville-Troike (1982) and especially by Braithwaite (1984).  <strong >At the outset, a speech community was seen</strong> as being composed of those who share similar linguistic rules (Bloomfield, 1933) [...]  <strong >Later, Labov will emphasize</strong> &#039;shared norms&#039; [...] (Labov, 1966:7).  <strong >Finally, there are those such as Hymes</strong> who argue for multiple criteria.</p></div> <p >Note how this example too is structured chronologically, but its real achievement (as well as covering a great deal of ground very concisely) is to compare and contrast a number of scholars, applying a clear and consistent personal perspective.</p><style type="text/css"></style> <h2 >Use of tenses</h2> <p >The verb tenses you use in your lit review reveal more to your reader than just the time frame. They can also tell your reader:</p> <ul class='listspaced' > <li >whose idea is being put forward (yours or someone else&#039;s)</li> <li >something about your attitude toward the ideas you are reporting on (if you have attributed them to an author/theorist)</li> <li >how general or specific your point/description is</li></ul> <p >In brief, tenses are used in the following ways (note that this is a simplified description of tense use):</p> <p >The present tense is used for:</p> <ol class='listspaced' > <li > <p >a generalisation (in overviews, statements of main points, etc.) OR a generally accepted scientific fact</p> <p > <strong >Example</strong>:  <em >&quot;This thesis  <strong >investigates</strong> the second approach.</em>&quot;</p></li> <li > <p >a statement made by you as a writer</p> <p > <strong >Example</strong>:  <em >&quot;Non-standard applications such as CASE, CAD/CAM  <strong >are</strong> now  <strong >emerging</strong>.</em>&quot;</p></li> <li > <p >a statement reporting the position of a writer and your support or lack of support for this position</p> <p > <strong >Example</strong>:  <em >&quot;Therefore, this sequential approach  <strong >is</strong> impractical in the real world where projects  <strong >are</strong> typically large (Radice, 1988) and the activities from one stage may be carried out in parallel with the activities of another stage.</em>&quot;</p></li></ol> <p >The past tense is used to:</p> <ol class='listspaced' > <li > <p >describe the contents, findings, or conclusions of past research. It emphasises the completed nature of a past activity. It is often referred to as the &#039;reporting&#039; tense, and is traditionally used by scholars to report all past findings, including even very current research in some cases.</p> <p > <strong >Example</strong>:  <em >&quot;This model  <strong >was</strong> not popular in the software industry until it was later refined by Boehm (1976).</em>&quot;</p></li></ol> <p >The present perfect tense is used to:</p> <ol class='doublespaced' > <li > <p >indicate that research in the area is still continuing, or that the research has immediate relevance today</p> <p > <strong >Example 1</strong>:  <em >&quot;Several researchers  <strong >have studied</strong> distributed database design.</em>&quot; <br ></br> <strong >Example 2</strong>:  <em >&quot;Fricke (1983)  <strong >has illustrated</strong> that black liquor shows three rheological behaviours.</em>&quot;</p></li> <li > <p >generalise about past literature</p> <p > <strong >Example</strong>:  <em >&quot;Software  <strong >has been tested</strong> manually for most of the last four decades.</em>&quot;</p></li> <li > <p >present a view using an information-prominent citation</p> <p > <strong >Example</strong>:  <em >&quot;The services that  <strong >have been identified</strong> for the future B-ISDN include [7] [77] [78].</em>&quot;</p></li></ol> <p >Thus, you can use tenses to indicate more than chronology. You can use the  <strong >past tense</strong> in reporting others&#039; research to indicate that that research is of secondary importance to your current work. You can use the  <strong >present perfect</strong> to indicate that the research is of more direct and primary importance. You can use the  <strong >present tense</strong> to indicate your general position relative to reported research.</p><style type="text/css"></style> <h2 >Paraphrase or quotation?</h2> <p >You will need to introduce the work of others to your reader, and you can do this in different ways. You can:</p> <ul class='listspaced' > <li >directly quote the words of other researchers, making sure you integrate the quote properly, or</li> <li >paraphrase other researchers&#039; ideas by expressing the ideas in your own words</li></ul> <p >Direct quotation is thus found more commonly in humanities and social science writing, and not so frequently in the science and technology disciplines. For the most part, you should  <strong >aim to paraphrase</strong>. Rarely is the original text written with your particular focus as its main concern. Your examiner will be looking to see how well you can utilise the sources for your own ends.</p> <p >Direct quotations are commonly used to highlight:</p> <ul class='listspaced' > <li >author&#039;s definitions of important terms</li> <li >assumptions underlying the author&#039;s choice of words</li> <li >particularly illustrative examples of an author&#039;s specific view, difficult to paraphrase</li> <li >particularly well-expressed opinions, revealing insights which a paraphrase could not capture</li></ul> <p >When you use direct quotation, it needs to fit grammatically with the rest of your sentence. (Please note that in the examples that follow,  <em >italics</em> have been used to highlight the words in the quotations.  However, in APA 5 <sup >th</sup> and Harvard systems, direct quotations from authors are written in regular font.)</p> <p class='resource' > <em >Aid agencies have been known to take the view that such communities consist of &quot;helpless victims with no capacity or expertise for responding to their own needs&quot; (Leung et al., 1994).</em></p> <p >You can see that the quotation is the grammatical continuation of that part of the sentence used to introduce it.</p> <div class='resource' > <p > <em >Hancock (1987) more recently summarized the concept as follows:</em></p> <blockquote > <p > <em >During disasters, &quot;charitable&quot; advertising may succumb to the temptation of making appeals for public money which can function to humiliate the supposed beneficiaries and misrepresent them as passive victims.</em></p></blockquote></div> <p >With &#039; <em >as follows</em>&#039;, no grammatical constraints apply to the quote, whereas an expression such as &#039; <em >Hancock (1987) can be criticized for [...]</em>&#039; must be followed by a verb ending in &#039;-ing&#039; (e.g. &#039; <em >comparing</em>&#039;) or a noun phrase (e.g. &#039; <em >his neglect of ...</em>)&#039;.</p> <p >In some cases you will need to modify the quote using square brackets [like this] to include a verb ending or to change a pronoun to make it follow grammatically. Omitted information is indicated by &#039;[...]&#039;.</p> <p class='resource' > <em >The system was designed to show &quot;how expert systems [could be used to] help in the decision making for investments in real estate&quot; (Ostler  and  Branard, 1996, p. 77).</em></p> <p >A variety of constructions is available. The important thing to consider is how you put this all together to give a picture of your own research in relation to others&#039;. You will be showing your attitude toward that research, whether you consider it outdated or still viable, close to your own perspective, etc.</p><style type="text/css"></style> <h2 >Reporting words</h2> <p >The following section lists some useful expressions for critically presenting other writers&#039; ideas.</p> <p >Reporting verbs or expressions are used to report on what other authors have done: whether they have made claims, argued a case, established findings, drawn conclusions, etc. Note the differences in these verbs: your choice of word will reveal to your reader your attitude toward the status of the author&#039;s theories/research; it will also indicate whether or not you consider her/his claims to be substantiated.</p> <p class='task' >Assign the following reporting words to the most appropriate category:</p> <div id='interaction' > <table class='data' style='width:600px' > <colgroup > <col style='width: 38%' ></col> <col style='width: 24%;text-align:center' ></col> <col style='width: 38%;vertical-align:top' ></col></colgroup> <tr > <th >Reporting verb</th> <th >Answer</th> <th >Categories</th></tr> <tr valign='top' > <td >Account for</td> <td > <span id='option-1' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td> <td rowspan='31' > <p class='footnote' >Note: In the following, &quot;author&quot; indicates the source (not &quot;you as the writer&quot;).</p> <p > <strong >Group 1</strong> Author&#039;s argument (author making a point to develop or justify his/her argument)</p> <p > <strong >Group 2</strong> Author&#039;s emphasis (author drawing reader&#039;s attention to a particular point)</p> <p > <strong >Group 3</strong> Author&#039;s references to other authors (author positioning him/herself against other authors)</p> <p > <strong >Group 4</strong> Author&#039;s omissions (author not fully arguing a point)</p> <p > <strong >Group 5</strong> Author&#039;s admissions (author conceding a point of potential weakness)</p></td></tr> <tr > <td >Acknowledge</td> <td > <span id='option-2' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Argue</td> <td > <span id='option-3' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Assume</td> <td > <span id='option-4' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Challenge</td> <td > <span id='option-5' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Claim</td> <td > <span id='option-6' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Contend</td> <td > <span id='option-7' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Dispute</td> <td > <span id='option-8' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Draw attention to</td> <td > <span id='option-9' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Emphasise</td> <td > <span id='option-10' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Establish</td> <td > <span id='option-11' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Find</td> <td > <span id='option-12' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Focus on</td> <td > <span id='option-13' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Hold the view</td> <td > <span id='option-14' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Insist</td> <td > <span id='option-15' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Maintain</td> <td > <span id='option-16' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Note</td> <td > <span id='option-17' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Observe</td> <td > <span id='option-18' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Point out</td> <td > <span id='option-19' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Propose</td> <td > <span id='option-20' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Prove</td> <td > <span id='option-21' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Recognise</td> <td > <span id='option-22' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Recommend</td> <td > <span id='option-23' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Reiterate</td> <td > <span id='option-24' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Reject</td> <td > <span id='option-25' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Remark</td> <td > <span id='option-26' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Stress</td> <td > <span id='option-27' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Suggest</td> <td > <span id='option-28' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Support</td> <td > <span id='option-29' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Take for granted</td> <td > <span id='option-30' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr> <tr > <td >Underline</td> <td > <span id='option-31' > <img src="http://www.monash.edu.au/lls/llonline/assets/images/input-box.jpg" alt='input' /> </span></td></tr></table></div> <div id='responses' style='display:none' ></div> <div id='answers' style='display:none' ></div> <script type='text/javascript' src="http://www.monash.edu.au/lls/llonline/assets/javascript/quiz2.js" ></script> <hr ></hr> <h3 >Indicating your own position</h3> <p >There are a number of ways of indicating your position in relation to previous research. The following is a sample of the kinds of evaluative expressions which may be used to indicate your own views of the authors you cite.</p> <div class='resource' > <p >The research:</p> <ul class='listspaced' > <li >disregarded X</li> <li >neglected to consider X</li> <li >overlooked X</li> <li >underestimated X</li> <li >has been limited to X</li> <li >overestimated X</li> <li >suffered from X</li> <li >requires excessive amounts of (time/storage, etc)</li> <li >has taken no account of X.</li></ul></div> <p >Which of the following adjectives have you seen used in your discipline - and in what way? Some may have positive OR negative connotations depending on the discipline and what it values.</p> <div class='resource' > <p >The research/theory is:</p> <ul class='listspaced' > <li >incomplete</li> <li >efficient</li> <li >questionable</li> <li >useful</li> <li >simple</li> <li >reliable</li> <li >too general</li> <li >robust</li> <li >inconclusive</li> <li >unsatisfactory</li> <li >comprehensive</li> <li >complex</li> <li >over-simplified</li> <li >cumbersome</li></ul></div> <p >You can expand your repertoire of evaluative expressions by reading articles or other theses attentively.</p><style type="text/css"></style> <h2 >Plagiarism</h2> <p >Plagiarism means taking the ideas or words from other writers without acknowledging them. Along with fabricating results, it is considered to be one of the worst academic sins! When you submit your thesis you must be very confident that all sources are acknowledged; hence the Declaration Statement. This is why you must use a method of notetaking which allows you to easily distinguish your own work from that of others.</p> <p > <strong >Example</strong></p> <div class='resource' > <h4 >The original author wrote:</h4> <p > <em >&quot;[Microsoft&#039;s chairman has explained the]  <strong >company&#039;s strategy to make Windows the universal client operating system in the enterprise.</strong></em>&quot;</p> <h4 >The student wrote:</h4> <p > <em >&quot;The  <strong >company&#039;s strategy is to make Windows the universal client operating system in the enterprise</strong> by the Window Open Services Architecture (WOSA) [Semich, 1992].</em>&quot;</p></div> <p >The student has copied word for word from the original author&#039;s article. Although the student acknowledged the author, he didn&#039;t put the excerpt in quotation marks or adequately paraphrase the original wording. This is still  <strong >not acceptable</strong>, and may be considered plagiarism.</p><style type="text/css"></style> <h2 >Signalling your position</h2> <h3 >The  <em >I</em> vs  <em >We</em> debate</h3> <p >In a thesis, the relevance and importance of you as the author can change from section to section. The way your identity intrudes into the text depends to a large extent on accepted use in your particular discipline. Take your cues from the way this is done in published articles in your field (although note the different vehicle and audience), and seek the advice of your supervisor.</p> <p > <em >&quot;I</em>&quot; or  <em >&quot;we</em>&quot; is commonly found in mathematical writing, but is usually advised against for industrial or civil engineering.  <em >&quot;I</em>&quot; and  <em >&quot;my</em>&quot; can commonly be intrinsic for psychoanalytic writing, for instance - and case-study writing in a number of disciplines - but not for psychology. You will find  <em >&quot;we</em>&quot; in history theses, and even  <em >&quot;nous</em>&quot; in French.</p> <p >Traditionally in much academic writing, it is not generally accepted to write: &quot;I think...&quot; or &quot;It is my opinion...&quot;, because this detracts from the supposed objectivity of scholarship. It is true that too much insertion of yourself in your writing swings the focus away from the material you are investigating and on to you. However, under the influence of a number of (post-)modern philosophers and other theorists, this may even be desirable in some disciplines. It is a debate that is still in flux within the academic community.</p> <p >It sounds awkward to style yourself as  <em >&quot;the author</em>&quot;,  <em >&quot;the present writer</em>&quot;, or  <em >&quot;the researcher</em>&quot;. There are more graceful ways of expressing your own opinion. If you are uncertain how to avoid an over-personalised tone in sections of the thesis where you do not want this, or too much passive voice, you can use the following expressions to make  your position clear in relation to your sources:</p> <div class='resource' > <h4 >Showing support or agreement</h4> <p > <strong >Example</strong>:  <em >&quot;The following discussion is based on</em> the work in Murray et al.(1990).&quot;</p> <p > <strong >Example</strong>:  <em >&quot;From the above discussion, it is clear that</em> the design of moment connections involving solid members offers considerable insight into...&quot;</p> <p > <strong >Example</strong>: &quot;The characteristics of vapour flows in falling film evaporators  <em >are well described</em> by Stenhede (1982).&quot;</p></div> <div class='resource' > <h4 >Showing disagreement</h4> <p > <strong >Example</strong>: &quot;Bruegge et al. (1992) review OMT;  <em >however, their paper is from a project management and team communication perspective and is not relevant</em> to the argument presented here.&quot;</p> <p > <strong >Example</strong>:  <em >&quot;Neither</em> mathematics  <em >nor</em> the classic Newell and Simon (1972) descriptions of human problem solving  <em >are particularly useful</em> in domains where absolute correctness, resolution, proof and related concepts are inappropriate.&quot;</p></div><style type="text/css"></style> <h2 >Active or passive voice?</h2> <p >Some academic writers feel that the use of the passive voice (verbs which do not indicate who or what is doing the action) can lead to writing in which sources or agents are not clear. Certainly, repeated use of the passive results in texts which are &#039;flat&#039; and tedious to read.</p> <p >The difficulty with endless passive sentences is that the reader tends to lose sight of any agent, and the writing becomes dominated by  <strong >things</strong> and  <strong >concepts</strong> instead of people. You may see passive voice dominating in published articles, but this is often for reasons of space. Do not be afraid to use active voice - especially in your Discussion section,  where it is sometimes important to indicate that it is  <strong >you</strong> thinking certain things and having particular opinions. In Methods sections of many theses (in Medicine, for example), it is acceptable to break the monotony of many passive voice sentences with some active voice.</p> <p >Compare the two texts below and decide which you think is preferable.</p> <div class='resource' > <h4 >Passive voice text</h4> <blockquote >The systems most  <strong >favoured</strong> for investment  <strong >were shown to be</strong> planning, design and production. Many manual systems  <strong >were reported</strong> as being current investments across the sector. Only the largest firms, however, showed any degree of interest in integrated systems. Textile and clothing firms, in particular,   <strong >were seen to be</strong> investing in automated production, design, planning and reporting technologies.</blockquote></div> <div class='resource' > <h4 >Active voice text</h4> <blockquote >Our research  <strong >has shown</strong> that in terms of current investments, manufacturers  <strong >favoured</strong> planning, design and production systems, with firms across the sector  <strong >reporting</strong> investments in a range of manual systems. Only the largest firms, however, showed any degree of interest in integrated systems. We  <strong >have seen</strong> textile and clothing firms, in particular, investing in automated production, design, planning and reporting technologies.</blockquote></div> <p >See also the Grammar section on  <a href='grammar/passive/index.xml' >Passive Voice</a><em> &lt;www.monash.edu.au/lls/llonline/grammar/passive/index.xml&gt;</em> .</p><style type="text/css"></style> <h2 >Useful references - literature reviews</h2> <p style='margin-left:25pt;text-indent:-25pt' >Australian Government Publishing Service (1992).  <em >Style Manual for Authors, Editors and Printers</em>. 4th ed. Canberra: AGPS.</p> <p style='margin-left:25pt;text-indent:-25pt' >Blaxter, L., Hughes, C., &amp; Tight, M. (1996).  <em >How to Research</em>. Buckingham: Open University University Press.</p> <p style='margin-left:25pt;text-indent:-25pt' >Booth, W.C., Colomb, G. C., &amp; Williams, J. M. (1995).  <em >The Craft of Research</em>. Chicago and London: The University of Chicago Press.</p> <p style='margin-left:25pt;text-indent:-25pt' >Mauch, J.E., &amp; Birch, J.W. (1983).  <em >Guide to the Successful Thesis and Dissertation. Conception to Publication: A Handbook for Students and Faculty</em>. New York and Basel: Marcel Dekker.</p> <p style='margin-left:25pt;text-indent:-25pt' >Rudestam, K. E.,  &amp; Newton, R. R. (1992).  <em >Surviving Your Dissertation</em>. Newbury Park: Sage.</p> <p style='margin-left:25pt;text-indent:-25pt' >Sharp, J. A.,  &amp; Howard, K. (1996).  <em >The Management of a Student Research Project</em>. 2nd ed. Great Britain: Gower.</p> <p style='margin-left:25pt;text-indent:-25pt' >Taylor, G. (1989).  <em >The Student&#039;s Writing Guide</em>. Cambridge: CUP.</p> <p style='margin-left:25pt;text-indent:-25pt' >Turabian, K.L. (1996).  <em >A Manual for Writers of Term Papers, Theses, and Dissertations</em>. 6th ed. Chicago: University of Chicago Press.</p> <p style='margin-left:25pt;text-indent:-25pt' >Weissberg, R., &amp; Buker, S. (1990).  <em >Writing Up Research. Experimental Research Report Writing for Students of English</em>. Englewood Cliffs, New Jersey: Prentice Hall.</p><style type="text/css"></style> <h2 >Reviewing books and articles</h2> <p >In some courses students are given an assignment like the one below.  They are asked to read a book, a chapter of a book, or a journal article, and to write a  <strong >critical review</strong> of it.</p> <p >(Note that this is different from  <a href='writing/general/lit-reviews/index.xml' >writing a literature review</a><em> &lt;www.monash.edu.au/lls/llonline/writing/general/lit-reviews/index.xml&gt;</em> , which means reading a wide range of writing (= &quot;the literature&quot;) on a particular subject, to get an understanding of the history of research in that area, and identify what is known, what has been suggested and is still under dispute, and what is still unknown with regard to that topic.)</p> <p class='task' >Read the topic and sample review, then study the comments. Click on the  <span class='highlightactive' >highlighted</span>  text for comments about academic writing conventions; click on the notes in the margin for commentary on the review.</p> <p >The following review is based on an  <a href='assets/utilities/download.php?file=writing/general/lit-reviews/ballard-clanchy-article.pdf' >article by Ballard and Clanchy</a><em> &lt;www.monash.edu.au/lls/llonline/assets/utilities/download.php?file=writing/general/lit-reviews/ballard-clanchy-article.pdf&gt;</em>  (.pdf, 155KB).</p> <div style='width:70%' > <h4 >Topic</h4> <span id='comment-image-1' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-1]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-01.gif" alt='comment' ></img><br /><br /></span> <p class='topic' >Write a critical review of Chapter 2 of Study abroad: A Manual for Asian Students. In your review you should summarise the chapter and then evaluate it. (1,000 words)</p> <h4 >Sample review</h4> <span id='comment-image-2' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-2]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-11.gif" alt='comment' ></img><br /><br /></span> <span id='comment-image-3' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-3]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-02.gif" alt='comment' ></img><br /><br /></span> <p >B. Ballard and J. Clanchy (1985).  <cite >Study abroad: A manual for Asian students</cite> (Chapter 2: &#039;Cultural variations in style of thinking&#039;). Longman: Malaysia</p> <span id='comment-image-4' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-4]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-03.gif" alt='comment' ></img><br /><br /></span> <p >[1]  <span id='comment-ref-1'  style='background:#B1D9F4;' ><sup>[1]</sup>In recent years</span>, it has become a common trend for overseas students to travel to Australia to undertake university courses. Whilst most of these students are very successful in their degrees  <span id='comment-ref-2'  style='background:#B1D9F4;' ><sup>[2]</sup>(Hawthorne, 2000)</span>, some do experience difficulty along the way. Students find inevitably that doing all their study in English poses a significant challenge. Others find that the ways of studying can be different from what they are used to in their home educational culture.</p> <span id='comment-image-5' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-5]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-04.gif" alt='comment' ></img><br /><br /></span> <p >[2] Differences in educational cultures are the subject of Chapter 2 of  <span id='comment-ref-4'  style='background:#B1D9F4;' ><sup>[4]</sup>Ballard and Clanchy&#039;s</span> book  <span id='comment-ref-3'  style='background:#B1D9F4;' ><sup>[3]</sup> <cite >Study Abroad: A Manual for Asian Students</cite></span>. In particular, the authors explore the question of whether students from different cultures think differently.  <span id='comment-image-6' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-6]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-05.gif" alt='comment' ></img><br /><br /></span>Whilst they admit that it is difficult to draw firm conclusions here, they do think that overseas students in Australian universities  <span id='comment-ref-5'  style='background:#B1D9F4;' ><sup>[5]</sup>&quot;often bring different purposes to their thinking and learning&quot; (p.9).</span> By this, they mean that students can approach academic tasks in a manner that is different from that expected by their lecturers.</p> <span id='comment-image-7' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-7]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-06.gif" alt='comment' ></img><br /><br /></span> <p >[3] To support this idea, the authors present a number of case studies, in particular a Japanese economics student&#039;s response to the following essay topic: Compare Friedman&#039;s views of economic policy in post-war Europe with those of Samuelson. This student&#039;s essay consisted mainly of biographical information about the two theorists without providing any details about their respective views. Clearly this approach was at odds with that expected by the lecturer. The student later explained that his response would be the required approach to such a task in a Japanese university.</p> <p >[4] In explaining this mismatch of approaches,  <span id='comment-ref-6'  style='background:#B1D9F4;' ><sup>[6]</sup>Ballard and Clanchy propose</span> that there are three fundamentally different learning styles. The first of these is a &#039;reproductive&#039; approach. This involves students learning &quot;by memorizing information, solving problems and following procedures set by the teacher&quot; (p.11). According to the authors, these types of activities are typical of high school education in Australia. The second approach is an &#039;analytical&#039; one and is thought to be typical of Australian tertiary education. At this level students are expected &quot;to question and think critically about knowledge&quot; (p.11). Finally at post-graduate level, students are required to do independent research and be original in their approach to knowledge. This is described as a &#039;speculative&#039; approach. The authors believe that education systems in Asian countries tend to emphasise the first of these approaches i.e. &#039;reproduction&#039;. Therefore, when Asian students study in Australia they generally need to adjust their approach and learn to be more critical and analytical. The problems in the economics essay quoted above can therefore be explained in terms of the student&#039;s failure to adjust his approach.</p> <p >[5] To reinforce their views that these cultural differences in thinking exist,  <span id='comment-ref-7'  style='background:#B1D9F4;' ><sup>[7]</sup>the authors refer to the work of Robert Kaplan (p.15).</span> Kaplan argues that there are five distinct patterns for structuring an expository paragraph. Of particular interest here is the contrast he establishes between the English pattern, which he calls  <span id='comment-ref-8'  style='background:#B1D9F4;' ><sup>[8]</sup>&#039;linear&#039;</span> - &quot;moving directly from the central idea to explanations and examples&quot; - and the Oriental pattern, described as an &#039;approach by indirection&#039; - &quot;sentences moving round the topic and avoiding any explicit judgement or conclusion&quot;.</p> <span id='comment-image-8' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-8]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-07.gif" alt='comment' ></img><br /><br /></span> <p >[6] Ballard and Clanchy therefore suggest that students intending to study in English-speaking countries need to do more than develop their English language competence. They also need to adapt their study behaviour and in particular &quot;to develop a more analytical and critical approach to learning&quot; (p.17).</p> <span id='comment-image-9' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-9]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-08.gif" alt='comment' ></img><br /><br /></span> <p >[7] How convincing though, is this idea that Asian students think in a fundamentally different  <span id='comment-ref-9'  style='background:#B1D9F4;' ><sup>[9]</sup>way?</span> First of all we need to consider the evidence Ballard and Clanchy draw on to support this view.  <span id='comment-image-10' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-10]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-09.gif" alt='comment' ></img><br /><br /></span>The case studies presented seem persuasive, but it must be remembered that these are only small in number and we do not know how typical they are. The case of the Japanese student for example, may be quite unusual. In my view, more systematic and comprehensive research of this issue is needed before any firm conclusions can be drawn. It would be interesting for example to try the essay topic on a large group of students and find out how they would respond to it.   <span id='comment-ref-10'  style='background:#B1D9F4;' ><sup>[10]</sup>The authors of the chapter can therefore be criticized</span> here for a lack of evidence to support this view.</p> <p >[8] Another questionable aspect of this article is its implied cultural bias. Although the authors do not state that the methods of Australian education are superior, this is what is implied from their model of learning styles. Whereas it is suggested that Australian students progress from a &#039;reproductive&#039; approach to an &#039;analytical&#039; approach, the authors seem to think that Asian education does not move beyond this &#039;reproductive&#039; stage. Are Asian tertiary students then to consider themselves only as the equals of Australian secondary students? By implication, Asian education is seen as an undeveloped form.</p> <p >[9] This same cultural bias can also be found in the Kaplan material.  His characterisation of the English pattern as &#039;linear&#039; in contrast to the &#039;circularity&#039; of the Asian pattern implies that he finds the former more logical. Scholars from Asian countries, which have their own rich traditions of learning, may regard this judgement as offensive. Kaplan may also be accused of serious oversimplification when he speaks of a single Oriental style of thinking. Asia consists of many cultures and languages which cannot be reduced into one uniform pattern. By contrast he proposes that there are  <span id='comment-ref-11'  style='background:#B1D9F4;' ><sup>[11]</sup> <em >three</em></span> distinct European patterns - English, Russian and Romance. </p> <p >[10] A final shortcoming in the article is the authors&#039; portrayal of how students are able to adjust their approaches to learning. If we accept the view that patterns of thinking are conditioned by language and education from an early age, then it is fair to assume that the process of adjustment to a new pattern would take a good deal of time and effort. However in the case of the Japanese student, the authors suggest that he only needed to recognise that he was approaching essay tasks in the wrong way and &quot;then he was able to make the necessary shifts without any great difficulty&quot; (p. 11). This does not sound very plausible.</p> <span id='comment-image-11' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-11]</sup> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-10.gif" alt='comment' ></img><br /><br /></span> <span id='comment-image-12' class='imagecomment' ><br /><sup style='background:#B1D9F4;line-height: 0;'>[IMG-12]</sup> <br ></br> <br ></br> <br ></br> <img src="http://www.monash.edu.au/lls/llonline/assets/images/writing/general/comments-review-12.gif" alt='comment' ></img><br /><br /></span> <p >[11]  <span id='comment-ref-12'  style='background:#B1D9F4;' ><sup>[12]</sup>Despite these criticisms</span>, Ballard and Clanchy&#039;s article still has some value and we need to judge it in terms of the authors&#039; purpose in writing it. It is not intended to be a rigorous piece of academic work, but is intended mainly to assist students in preparing for overseas study. We can therefore understand why the authors choose to be positive about Asian students&#039; capacity for adjustment, and why most cases are presented ultimately as success stories. The issue of how cultural differences affect academic performance nevertheless, remains a complex one, and further research is no doubt required before we can gain a full understanding of it.</p> <h4 > <span id='comment-ref-13'  style='background:#B1D9F4;' ><sup>[13]</sup>References</span></h4> <p >Hawthorne, L. (1999). &#039;Rethinking the impact of cultural difference on learning: The evidence for asset versus deficit models&#039;.  <cite >Proceedings of LAS conference</cite>, Melbourne. <br ></br> <br ></br> <br ></br></p></div> <div id='comment-img-1' ><sup style=background:#B1D9F4;>[IMG-1]</sup> <h4 >Analysing the topic</h4> <p >Notice how this review topic is asking students to do two things - to  <strong >summarise</strong> a text (in this case a book chapter) and then to  <strong >evaluate</strong> it. This is what most review tasks will require you to do - though you may find some variation on this theme. It&#039;s important to always read the topic instructions carefully.</p> <p >Hint: When you are reading a text to be reviewed - keep the following two questions uppermost in your mind:</p> <ul class='listspaced' > <li >What is this text saying? (summary);</li> <li >What do I think about what it&#039;s saying? (evaluation)</li></ul></div> <div id='comment-img-2' ><sup style=background:#B1D9F4;>[IMG-2]</sup> <h4 >Structure of the review</h4> <p >This sample review is structured in a very conventional way, with a clear division of:</p> <ul class='listspaced' > <li > <strong >summary</strong> of the text (paragraphs 2-6)</li> <li > <strong >evaluation</strong> of the text
+					 <ul class='listspaced' > <li >negative (par. 7-10)</li> <li >positive  (par. 11).</li></ul>
+				</li></ul> <p >There are other possibilities. For example, you may wish to summarise the first section of a text and then evaluate it, and then move on to the second section and evaluate that etc. </p> <p >Hint: Whichever structure you use, it&#039;s important that you keep the functions of summary and evaluation clearly distinct. The reader needs to be in no doubt when you are presenting the ideas IN the text, and when you are presenting your ideas ABOUT the text.</p></div> <div id='comment-img-3' ><sup style=background:#B1D9F4;>[IMG-3]</sup> <h4 >The text being reviewed</h4> <p >Notice how this review begins with the full bibliographical information about the text being reviewed - author, date, title publisher, place etc.</p> <p >Hint: Always commence your review with this information.</p></div> <div id='comment-img-4' ><sup style=background:#B1D9F4;>[IMG-4]</sup> <h4 >Introduction</h4> <p >Rather than going straight into reviewing the text, notice how this student writer has begun by introducing the broad issue that the text is addressing. In this case it is the problems that international students can experience in Australian universities. </p> <p >Hint: Think about how you can relate the text you are reviewing to its broader context.</p></div> <div id='comment-img-5' ><sup style=background:#B1D9F4;>[IMG-5]</sup> <h4 >Summarising the text </h4> <p >As we noted, one of the main components of a review is to summarise the original text. You will notice that paragraphs 2-6 are concerned with this. A good summary like this one will do the following:</p> <ul class='listspaced' > <li >accurately represent the ideas in the original text </li> <li >focus on the more important ideas</li> <li >be perfectly understandable to someone who has not read the original </li></ul> <p >How long should a summary section be? It will depend on the required length of the review.</p> <p >Hint: In a well-constructed review the summary section will be no longer than the evaluation section that follows it. </p></div> <div id='comment-img-6' ><sup style=background:#B1D9F4;>[IMG-6]</sup> <h4 >Summarising the text - </h4> <ol style='list-style-type:lower-roman' class='listspaced' > <li > <strong >introducing the text (par. 2)</strong> <p >Notice that this paragraph gives an overview of the text by introducing:</p> <ul class='listspaced' > <li >the text and its authors</li> <li >the main content covered in the text (issue of whether students from different educational cultures think differently)</li> <li >the authors&#039; main argument (that overseas students can bring different &#039;purposes&#039; to their study)</li></ul> <p >Hint: Of these three elements, you will need to put most thought into the third. It is very important to give a precise statement of what you think the principal argument in the text is. Sometimes this can be very difficult!</p></li></ol></div> <div id='comment-img-7' ><sup style=background:#B1D9F4;>[IMG-7]</sup> <h4 >Summarising the text - </h4> <ol style='list-style-type:lower-roman' start='2' class='listspaced' > <li > <strong >summarising the supporting evidence (par. 3-5)</strong> <p >Many academic texts that you read - and may be required to review - can be thought of as presenting:</p> <ul class='listspaced' > <li >a main argument</li> <li >evidence to support that argument </li></ul> <p >You will notice that paragraphs 3-5 outline some of the main evidence Ballard and Clanchy provide to support their argument.</p> <p >Hint: When you are reading a text to be reviewed, think hard about this connection between main argument + evidence. Your subsequent evaluation of the text will be concerned in part with how well you think this connection has been established.</p></li></ol></div> <div id='comment-img-8' ><sup style=background:#B1D9F4;>[IMG-8]</sup> <h4 >Summarising the text -</h4> <ol style='list-style-type:lower-roman' start='3' class='listspaced' > <li > <strong >rounding off (par. 6)</strong> <p >The conclusion of your summary will often reflect the concluding material that you find in the original text. In this case it is what the authors see as the implications of their argument. </p> <p >Hint: Remember that in all of the summary section, it is the ideas of the author only that you are presenting - not your own! This comes next in the evaluation section. </p></li></ol></div> <div id='comment-img-9' ><sup style=background:#B1D9F4;>[IMG-9]</sup> <h4 >Evaluating the text (par. 7-11)</h4> <p >The other main requirement of a critical review is to provide an  <strong >evaluation</strong> of the original text. You will notice that the remainder of the review is concerned with this. The purpose of evaluation is broadly for you to say what you think about the text - its strengths and weaknesses; what&#039;s interesting about it - what not so; how much you are persuaded by it; how much it has contributed to your understanding of the issue etc</p> <p >Hint: It is most important that you are able to provide a cogent response to any text you are reviewing. As you are reading, make a note of any impressions you have of it. Some of these can be worked subsequently into well-supported evaluative statements.</p></div> <div id='comment-img-10' ><sup style=background:#B1D9F4;>[IMG-10]</sup> <h4 >Evaluating the text - </h4> <ol style='list-style-type:lower-roman' class='listspaced' > <li >negative comments (par. 7-10)
+					 <p >You will notice that this student reviewer has chosen to focus on certain problems she has identified in the text - but this of course is only one person&#039;s impression. (Note that being &#039;critical&#039; in the university context does not necessarily mean being &#039;negative&#039;).</p>
+					 <p >The student has been critical of the text on the basis of a number of  <strong >criteria</strong> ie.</p>
+					 <ul class='listspaced' > <li > <strong >limited evidence</strong> to support main argument (par 7)</li> <li > <strong >cultural bias</strong> in main argument - and that of Kaplan  (par 8-9)</li> <li > <strong >oversimplification</strong> in Kaplan model (par 9)</li> <li > <strong >lack of logic</strong> in implications of main argument (par 10)</li></ul>
+					 <p >Hint: It is important for you to develop a sense of the criteria that you can draw in evaluating texts in your field. Those above are just a few. </p>
+					 <p ></p>
+				</li></ol></div> <div id='comment-img-11' ><sup style=background:#B1D9F4;>[IMG-11]</sup> <h4 >Evaluating the text - </h4> <ol style='list-style-type:lower-roman' start='2' class='listspaced' > <li > <strong >positive comments (par. 11)</strong> <p >Unless you feel that a text has no redeeming features at all, it is always a good idea to get some balance in your commentary. Notice that the criterion applied here is one of the &#039;usefulness&#039; of the text - its intention to assist students.</p> <p >Hint: It is always good to be able to give an overall impression of the text. Before writing the review, try to decide whether your impression is overall a favourable or unfavourable one - and then organise your material accordingly.  </p></li></ol></div> <div id='comment-img-12' ><sup style=background:#B1D9F4;>[IMG-12]</sup> <h4 >Editing </h4> <p >You may have noticed that the review is free of spelling, typographical and grammatical errors.</p> <p >Hint: always read your work very carefully before you submit it.  Avoid doing your editing on the screen. Always print out and edit from a hard copy.  </p></div> <div id='comment-1' ><sup style=background:#B1D9F4;>[1]</sup> <h4 >Paragraphs</h4> <p >Organise your review into paragraphs and try to keep these to a reasonable length. All paragraphs in this review are at least 4-5 sentences long.</p></div> <div id='comment-2' ><sup style=background:#B1D9F4;>[2]</sup> <h4 >Citations (Hawthorne, 2000)</h4> <p >Citations are used to indicate any additional texts you have referred to.  Full bibliographical information for these texts is provided in a list of references at end.  You do not need to provide citations for the actual text being reviewed.</p></div> <div id='comment-3' ><sup style=background:#B1D9F4;>[3]</sup> <h4 >Italics 1</h4> <p >Use italics for the titles of any texts.</p></div> <div id='comment-4' ><sup style=background:#B1D9F4;>[4]</sup> <h4 >Referring to the authors</h4> <p >In a review, you will need to refer to the author(s) frequently - to make it clear that these are  <em >their</em> ideas and not  <em >yours</em>.  You will notice in the summary section here, the authors are mentioned in about every second sentence. In making these references, you may want to vary the language eg. use names ( <em >Ballard and Clanchy</em>), nouns ( <em >the authors, writers</em>); pronouns ( <em >they</em>) etc.</p></div> <div id='comment-5' ><sup style=background:#B1D9F4;>[5]</sup> <h4 >&quot;Quoting&quot; </h4> <p >When you quote from the text you need to use quotation marks, and indicate the exact page number. In a review, you should avoid doing too much quoting - opt mainly for paraphrase. Save any quotes for the especially important ideas in the text.</p></div> <div id='comment-6' ><sup style=background:#B1D9F4;>[6]</sup> <h4 >Reporting expressions</h4> <p >Along with referring to the authors, you will need to use a variety reporting expressions - to introduce their ideas, and also to indicate what they do in their text eg. </p> <ul class='listspaced' > <li > <em >the authors explore the question...</em></li> <li > <em >they admit that... </em></li> <li > <em >they do think that...</em></li> <li > <em >they mean that...</em></li> <li > <em >To support this idea, the authors present a number of case studies</em></li> <li > <em >Ballard and Clanchy propose that...</em></li></ul></div> <div id='comment-7' ><sup style=background:#B1D9F4;>[7]</sup> <h4 >Embedded Summary</h4> <p >In their text, Ballard and Clanchy refer to the ideas of Kaplan. Notice how this is handled in the student&#039;s summary. This is in effect a summary of a summary.</p> <p > <em >To reinforce their views that these cultural differences in thinking exist, the authors refer to the work of Robert Kaplan. Kaplan argues that ...  </em></p></div> <div id='comment-8' ><sup style=background:#B1D9F4;>[8]</sup> <h4 >&quot;Scare quotes&quot;</h4> <p >You use these to distance yourself from certain language. eg. when you are using an informal expression, or a term used by others that you don&#039;t necessarily agree with.</p></div> <div id='comment-9' ><sup style=background:#B1D9F4;>[9]</sup> <h4 >Signalling the shift to evaluation</h4> <p >It is very important to signal when the  <strong >summary</strong> of the text has stopped, and when the  <strong >evaluation</strong> has begun. Notice that it is done here by starting a new paragraph, and leading off with a question. </p></div> <div id='comment-10' ><sup style=background:#B1D9F4;>[10]</sup> <h4 >Signalling type of evaluation 1</h4> <p >It is important to make the nature of your evaluation clear - whether your comments are favourable or not. Notice the range of words and expressions used in paragraphs 7-10 to signal a negative response to material:</p> <blockquote >The authors can be criticised ... <br ></br>Another questionable aspect ...  <br ></br>This same cultural bias can be found ... <br ></br>Kaplan may also be accused of ... <br ></br>A final shortcoming in the article is ...</blockquote></div> <div id='comment-11' ><sup style=background:#B1D9F4;>[11]</sup> <h4 >Italics 3 - for emphasis </h4> <p >Use italics when you want to emphasise a word or expression</p></div> <div id='comment-12' ><sup style=background:#B1D9F4;>[12]</sup> <h4 >Signalling type of evaluation 2</h4> <p >Notice how the positive evaluation in paragraph 11 is explicitly signalled:</p> <p > <em >Despite these criticisms, Ballard and Clanchy&#039;s article still has value...</em></p></div> <div id='comment-13' ><sup style=background:#B1D9F4;>[13]</sup> <h4 >List of references </h4> <p >Only include here  <strong >additional</strong> texts you have referred to.   </p></div> <script type='text/javascript' src="http://www.monash.edu.au/lls/llonline/assets/javascript/essay3.js" ></script><table width="100%"><tr valign="top"><td align="left">Copyright &copy; 2017/03/15<br />Language and Learning, Monash University  - ABN 12 377 614 012 </td><td align="right"><span class="makecap">writingANDgeneralANDlit-reviews</span></td></tr></table></body></html>
